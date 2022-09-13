@@ -33,7 +33,7 @@ public class Menu {
 
     private static void doYourChoice(int choice) {
         switch (choice) {
-            case 1 -> productManager.showProduct();
+            case 1 -> productManager.show5Product(0);
             case 2 -> addproduct(productManager);
             case 3 -> productManager.editProduct();
             case 4 -> deleteProduct(productManager);

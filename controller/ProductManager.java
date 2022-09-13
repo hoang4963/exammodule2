@@ -106,5 +106,25 @@ public class ProductManager {
     public ArrayList<Product> getProductArrayList(){
         return productArrayList;
     }
+    public void show5Product(int index){
+        int indexbegin = index + 5;
+        if (index < productArrayList.size() && indexbegin < productArrayList.size()) {
+            for (int i = 0; i < indexbegin; i++) {
+                System.out.println(productArrayList.get(i));
+            }
+            System.out.println("tiep tuc 5 san pham an Enter( an nut khac bang out):");
+            Scanner scanner = new Scanner(System.in);
+            String a = scanner.nextLine();
+            if (a == "")
+            show5Product(indexbegin);
+            else System.out.println("out");
+        }
+        else if (indexbegin < productArrayList.size()){
+            for (int i = indexbegin; i < productArrayList.size(); i++) {
+                System.out.println(productArrayList.get(i));
+            }
+        }
+        else {System.out.println("het");}
+    }
 }
 
