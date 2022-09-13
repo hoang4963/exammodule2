@@ -4,10 +4,18 @@ import controller.ProductManager;
 import model.Product;
 import storage.ReadAndWriteCSV;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
+    public static final int FISRTCHOSEN = 1;
+    public static final int SECONDCHOSEN = 2;
+    public static final int THIRDCHOSEN = 3;
+    public static final int FOURTHCHOSEN = 4;
+    public static final int FIFTHCHOSEN = 5;
+    public static final int SIXTHCHOSEN = 6;
+    public static final int SEVENTHCHOSEN = 7;
+    public static final int EIGHTHCHOSEN = 8;
+    public static final int NINETHCHOSEN = 9;
     static ProductManager productManager = new ProductManager();
 
     public static void begin() {
@@ -33,15 +41,15 @@ public class Menu {
 
     private static void doYourChoice(int choice) {
         switch (choice) {
-            case 1 -> productManager.show5Product(0);
-            case 2 -> addproduct(productManager);
-            case 3 -> productManager.editProduct();
-            case 4 -> deleteProduct(productManager);
-            case 5 -> sort();
-            case 6 -> productManager.findMaxCost();
-            case 7 -> ReadAndWriteCSV.getInstance().readFileProductList(productManager.getProductArrayList());
-            case 8 -> ReadAndWriteCSV.getInstance().writeProductToCSV(productManager.getProductArrayList());
-            case 9 -> System.out.println("OUT");
+            case FISRTCHOSEN -> productManager.show5Product(0);
+            case SECONDCHOSEN -> addproduct(productManager);
+            case THIRDCHOSEN -> productManager.editProduct();
+            case FOURTHCHOSEN -> deleteProduct(productManager);
+            case FIFTHCHOSEN -> sort();
+            case SIXTHCHOSEN -> productManager.findMaxCost();
+            case SEVENTHCHOSEN -> ReadAndWriteCSV.getInstance().readFileProductList(productManager.getProductArrayList());
+            case EIGHTHCHOSEN -> ReadAndWriteCSV.getInstance().writeProductToCSV(productManager.getProductArrayList());
+            case NINETHCHOSEN -> System.out.println("OUT");
         }
     }
     private static void deleteProduct(ProductManager productManager) {
@@ -80,8 +88,8 @@ public class Menu {
             Scanner scanner5 = new Scanner(System.in);
             choice1 = Integer.parseInt(scanner5.nextLine());
             switch (choice1) {
-                case 1 -> productManager.showProduct(productManager.sortByDecreaseCost());
-                case 2 -> productManager.showProduct(productManager.sortByIncreaseCost());
+                case FISRTCHOSEN -> productManager.showProduct(productManager.sortByDecreaseCost());
+                case SECONDCHOSEN -> productManager.showProduct(productManager.sortByIncreaseCost());
             }
         }
     }
