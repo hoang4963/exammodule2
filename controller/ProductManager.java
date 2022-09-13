@@ -54,35 +54,41 @@ public class ProductManager {
        return productArrayList.get(index);
     }
     public void editProduct() {
+        int index = -1;
+        boolean check = false;
         System.out.println("Nhập vào mã sản phẩm cần sửa");
         Scanner scanner = new Scanner(System.in);
         String code = scanner.nextLine();
-        for (Product a : productArrayList) {
-            if (a.getProductCode().equals(code)) {
-                System.out.println("Nhập mã sản phẩm muốn sửa: ");
-                Scanner scanner1 = new Scanner(System.in);
-                String productCode = scanner1.nextLine();
-                System.out.println("Nhập tên sản phẩm muốn sửa: ");
-                Scanner scanner2 = new Scanner(System.in);
-                String productName = scanner2.nextLine();
-                System.out.println("Nhập giá sản phẩm muốn sửa: ");
-                Scanner scanner3 = new Scanner(System.in);
-                int productPrice = Integer.parseInt(scanner3.nextLine());
-                System.out.println("Nhập số lượng sản phẩm muốn sửa: ");
-                Scanner scanner4 = new Scanner(System.in);
-                int productAmount = Integer.parseInt(scanner4.nextLine());
-                System.out.println("Nhâp mô tả sản phẩm cần sửa: ");
-                Scanner scanner5 = new Scanner(System.in);
-                String productDescribe = scanner5.nextLine();
-                a.setProductCode(productCode);
-                a.setProductName(productName);
-                a.setCost(productPrice);
-                a.setProductAmount(productAmount);
-                a.setProductDescribe(productDescribe);
-            } else {
-                System.out.println("Không tìm được sản phẩm ");
+        for (int i =0; i < productArrayList.size(); i++) {
+            if (productArrayList.get(i).getProductCode().equals(code)) {
+                check = true;
+                index = i;
+                break;
             }
         }
+        if (check){
+            System.out.println("Nhập mã sản phẩm muốn sửa: ");
+            Scanner scanner1 = new Scanner(System.in);
+            String productCode = scanner1.nextLine();
+            System.out.println("Nhập tên sản phẩm muốn sửa: ");
+            Scanner scanner2 = new Scanner(System.in);
+            String productName = scanner2.nextLine();
+            System.out.println("Nhập giá sản phẩm muốn sửa: ");
+            Scanner scanner3 = new Scanner(System.in);
+            int productPrice = Integer.parseInt(scanner3.nextLine());
+            System.out.println("Nhập số lượng sản phẩm muốn sửa: ");
+            Scanner scanner4 = new Scanner(System.in);
+            int productAmount = Integer.parseInt(scanner4.nextLine());
+            System.out.println("Nhâp mô tả sản phẩm cần sửa: ");
+            Scanner scanner5 = new Scanner(System.in);
+            String productDescribe = scanner5.nextLine();
+            productArrayList.get(index).setProductCode(productCode);
+            productArrayList.get(index).setProductName(productName);
+            productArrayList.get(index).setCost(productPrice);
+            productArrayList.get(index).setProductAmount(productAmount);
+            productArrayList.get(index).setProductDescribe(productDescribe);
+        }
+        else System.out.println("khong tim thay");
     }
     public void productRemove(Scanner scanner) {
         System.out.println("Nhập vào mã sản phẩm muốn xóa: ");
