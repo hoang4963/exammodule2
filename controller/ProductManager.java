@@ -16,6 +16,11 @@ public class ProductManager {
             System.out.println(product);
         }
     }
+    public void showProduct(ArrayList<Product> products){
+        for (Product product : products) {
+            System.out.println(product);
+        }
+    }
     public void deleteProduct(String productCode){
         for (int i = 0; i < productArrayList.size(); i++) {
             if (productArrayList.get(i).getProductCode().equals(productCode)){
@@ -29,7 +34,7 @@ public class ProductManager {
         return productArrayList;
     }
     public ArrayList<Product> sortByDecreaseCost(){
-        ArrayList<Product> arrayList = new ArrayList<>();
+        ArrayList<Product> arrayList;
         arrayList = sortByIncreaseCost();
         Collections.reverse(arrayList);
         return arrayList;

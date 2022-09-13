@@ -80,8 +80,8 @@ public class Menu {
             Scanner scanner5 = new Scanner(System.in);
             choice1 = Integer.parseInt(scanner5.nextLine());
             switch (choice1) {
-                case 1 -> productManager.sortByIncreaseCost();
-                case 2 -> productManager.sortByDecreaseCost();
+                case 1 -> productManager.showProduct(productManager.sortByDecreaseCost());
+                case 2 -> productManager.showProduct(productManager.sortByIncreaseCost());
             }
         }
     }
